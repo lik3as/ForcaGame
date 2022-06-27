@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iconuser"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytSignUsername"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/username"
+        app:boxStrokeWidth="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:endIconDrawable="@drawable/clipcancel"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:startIconDrawable="@drawable/clipuser">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSignUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytSignEdtNome"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:hint="@string/name"
+        app:boxStrokeWidth="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="15"
+        app:endIconDrawable="@drawable/clipcancel"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lytSignUsername"
+        app:startIconDrawable="@drawable/clipuser">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSignName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="15" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytSignEdtEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:hint="@string/email"
+        app:boxStrokeWidth="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:endIconDrawable="@drawable/clipcancel"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lytSignEdtNome"
+        app:startIconDrawable="@drawable/clipemail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSignEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="30" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytSignEdtSenha"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:hint="@string/password"
+        app:boxStrokeWidth="3dp"
+        app:counterEnabled="true"
+        app:passwordToggleEnabled="true"
+        app:counterMaxLength="8"
+        app:passwordToggleDrawable="@drawable/clipeye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lytSignEdtEmail"
+        app:startIconDrawable="@drawable/cliplock">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSignSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="8" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytSignAutoIcon"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        app:boxBackgroundColor="@color/amber0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:hint="@string/cone_do_perfil"
+        app:boxStrokeWidth="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:focusableInTouchMode="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lytSignEdtSenha"
+        app:startIconDrawable="@drawable/ic_baseline_wallpaper_24">
+        <AutoCompleteTextView
+            android:id="@+id/atcSign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="140dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ripppleamber"
+        android:fontFamily="@font/vt323"
+        android:paddingBottom="6dp"
+        android:text="@string/ok"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@id/lytSignAutoIcon"
+        tools:layout_editor_absoluteX="140dp" />
+
+    <ProgressBar
+        android:id="@+id/signupProgressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnOk"
+        app:layout_constraintStart_toStartOf="@+id/btnOk"
+        app:layout_constraintTop_toBottomOf="@+id/btnOk" />
+</androidx.constraintlayout.widget.ConstraintLayout>

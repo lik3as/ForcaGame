@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ForcaGame</string>
+    <string name="join">Entrar</string>
+    <string name="email">Email</string>
+    <string name="password">Senha</string>
+    <string name="noAccount">Ainda não tem conta?</string>
+    <string name="forgotPsw">Esqueceu a senha?</string>
+    <string name="username">Nome de Usuário</string>
+    <string name="name">Nome</string>
+    <string name="cone_do_perfil">Ícone do perfil</string>
+    <string name="ok">Ok</string>
+    <string name="programming">Programação</string>
+    <string name="custom">Customizar</string>
+
+    <string-array name="profileIcon">
+        <item>Feliz</item>
+        <item>Normal</item>
+        <item>Ícone de Usuário</item>
+        <item>Estrela</item>
+    </string-array>
+    <string name="onOpenNav">Open nav</string>
+    <string name="onExitNav">Exit nav</string>
+    <string name="nickname">Nickname</string>
+</resources>
