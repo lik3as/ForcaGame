@@ -57,20 +57,28 @@ public class SignUpActivity extends AppCompatActivity {
         act.setOnItemClickListener((adapterView, view, pos, l) -> {
             act.setBackgroundColor(40);
             switch (adapterView.getItemAtPosition(pos).toString()) {
-                case ("Feliz"):
-                    imgIcon.setImageResource(R.drawable.iconhappy);
+                case ("Arch"):
+                    imgIcon.setImageResource(R.drawable.iconarchlinux);
                     icon = adapterView.getItemAtPosition(pos).toString();
                     break;
-                case ("Normal"):
-                    imgIcon.setImageResource(R.drawable.iconnormal);
+                case ("Gentoo"):
+                    imgIcon.setImageResource(R.drawable.icongentoo);
                     icon = adapterView.getItemAtPosition(pos).toString();
                     break;
-                case ("Ícone de Usuário"):
-                    imgIcon.setImageResource(R.drawable.iconuser);
+                case ("Debian"):
+                    imgIcon.setImageResource(R.drawable.icondebian);
                     icon = adapterView.getItemAtPosition(pos).toString();
                     break;
-                case ("Estrela"):
-                    imgIcon.setImageResource(R.drawable.iconstar);
+                case ("Fedora"):
+                    imgIcon.setImageResource(R.drawable.iconfedora);
+                    icon = adapterView.getItemAtPosition(pos).toString();
+                    break;
+                case ("Ubuntu"):
+                    imgIcon.setImageResource(R.drawable.iconubuntu);
+                    icon = adapterView.getItemAtPosition(pos).toString();
+                    break;
+                case ("Tux"):
+                    imgIcon.setImageResource(R.drawable.icontuxnobg);
                     icon = adapterView.getItemAtPosition(pos).toString();
             }
         });

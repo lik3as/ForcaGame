@@ -11,7 +11,6 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new GameView(this));
 
     }
 }

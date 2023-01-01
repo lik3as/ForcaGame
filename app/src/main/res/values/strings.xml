@@ -13,10 +13,12 @@
     <string name="custom">Customizar</string>
 
     <string-array name="profileIcon">
-        <item>Feliz</item>
-        <item>Normal</item>
-        <item>Ícone de Usuário</item>
-        <item>Estrela</item>
+        <item>Arch</item>
+        <item>Gentoo</item>
+        <item>Debian</item>
+        <item>Fedora</item>
+        <item>Ubuntu</item>
+        <item>Tux</item>
     </string-array>
     <string name="onOpenNav">Open nav</string>
     <string name="onExitNav">Exit nav</string>

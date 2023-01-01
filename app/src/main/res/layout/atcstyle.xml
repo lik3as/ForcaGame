@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/cone_do_perfil"
-    android:textSize="17sp"
+    android:textSize="19sp"
     android:fontFamily="@font/vt323"
     android:paddingBottom="2dp"
     android:paddingHorizontal="5dp"
