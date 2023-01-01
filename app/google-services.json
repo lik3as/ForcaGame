@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "461519323754",
-    "project_id": "forcagame-f8d64",
-    "storage_bucket": "forcagame-f8d64.appspot.com"
+    "project_number": "971455386056",
+    "project_id": "linquizdb",
+    "storage_bucket": "linquizdb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:461519323754:android:c34f3a2bd9b3e4e694c013",
+        "mobilesdk_app_id": "1:971455386056:android:e71aad5405583bf332f0fd",
         "android_client_info": {
-          "package_name": "br.edu.forcagame"
+          "package_name": "br.edu.linuquiz"
         }
       },
       "oauth_client": [
         {
-          "client_id": "461519323754-gko58ce2ddh55t7u606hfgfkafin5p9r.apps.googleusercontent.com",
+          "client_id": "971455386056-7j74uee185cl5o4kg6duvu7p33mr0ubn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "br.edu.forcagame",
-            "certificate_hash": "84d73967ae034fa8699596492fd838b566c54e1e"
+            "package_name": "br.edu.linuquiz",
+            "certificate_hash": "b0c4a750778b133d12f776b9d94b4463bb5cb596"
           }
         },
         {
-          "client_id": "461519323754-to36t14qgchf4er9ucaa25sh8rqup7js.apps.googleusercontent.com",
+          "client_id": "971455386056-h51k0b4ar1s654ifahm16uvqgl0t06ce.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD9bdxW1PI6TGTCaX_cax_lUIi5ra-Hsp0"
+          "current_key": "AIzaSyAj_Lm-O_LlbGaR2V7qx3QzMeqUjHcVm4c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "461519323754-to36t14qgchf4er9ucaa25sh8rqup7js.apps.googleusercontent.com",
+              "client_id": "971455386056-h51k0b4ar1s654ifahm16uvqgl0t06ce.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
