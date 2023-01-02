@@ -1,4 +1,6 @@
-package br.edu.forcagame.controller;
+package br.edu.linuquiz.controller.services.dao;
+
+import android.telecom.Call;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -7,14 +9,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-import br.edu.forcagame.controller.services.LoginCallback;
-import br.edu.forcagame.controller.services.RegisterCallback;
-import br.edu.forcagame.controller.services.UserListCallback;
-import br.edu.forcagame.model.User;
-
-public class UserDAO {
-
+import br.edu.linuquiz.controller.services.Callbacks;
+import br.edu.linuquiz.controller.services.DAO;
+import br.edu.linuquiz.model.User;
+public class UserDAO{
     DatabaseReference reference;
     FirebaseAuth firebaseAuth;
     String UID;
@@ -25,7 +25,7 @@ public class UserDAO {
 
     }
 
-    public void insert(String password, String name, String nickname, String email, String icon, RegisterCallback c) {
+    public void insert(String password, String name, String nickname, String email, String icon, Callbacks.Register c) {
         User user = new User(password, name, nickname, email, icon);
 
         try {
@@ -34,13 +34,14 @@ public class UserDAO {
                         if (t.isSuccessful()) {
                             UID = firebaseAuth.getUid();
 
+                            assert UID != null;
                             reference.child(UID)
                                     .setValue(user).addOnCompleteListener(t2 -> {
                                         c.onRegisterCallback(t2.isSuccessful());
                                     });
 
                         } else {
-                            t.getException().printStackTrace();
+                            Objects.requireNonNull(t.getException()).printStackTrace();
                             c.onRegisterCallback(false);
                         }
                     });
@@ -51,7 +52,7 @@ public class UserDAO {
         }
     }
 
-    public void authUser(String email, String password, LoginCallback c) {
+    public void authUser(String email, String password, Callbacks.Login c) {
         try {
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(t -> {
                 c.onLoginCallback(t.isSuccessful());
@@ -61,7 +62,7 @@ public class UserDAO {
         }
     }
 
-    public void usersList(UserListCallback c) {
+    public void usersList(Callbacks.UserList c) {
         List<User> users = new ArrayList<>();
         reference.get().addOnCompleteListener(t -> {
             if (t.isSuccessful() && t.getResult().exists()) {
@@ -69,11 +70,8 @@ public class UserDAO {
                     users.add(snapshot.getValue(User.class));
 
                 }
-                c.userList(users);
+                c.onUserListCallback(users);
             }
         });
     }
-
-
 }
-

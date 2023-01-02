@@ -1,4 +1,4 @@
-package br.edu.forcagame.view;
+package br.edu.linuquiz.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +10,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import br.edu.linuquiz.R;
+import br.edu.linuquiz.controller.services.dao.UserDAO;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import br.edu.forcagame.R;
-import br.edu.forcagame.controller.UserDAO;
+
 
 public class SignUpActivity extends AppCompatActivity {
     EditText edtNome, edtNickname, edtPassword, edtEmail;
@@ -24,7 +26,6 @@ public class SignUpActivity extends AppCompatActivity {
     ImageView imgIcon;
     ProgressBar progressBar;
     UserDAO userDAO = new UserDAO();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

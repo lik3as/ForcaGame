@@ -1,10 +1,8 @@
-package br.edu.forcagame.view;
+package br.edu.linuquiz.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import br.edu.forcagame.R;
 
 public class MenuActivity extends AppCompatActivity {
 

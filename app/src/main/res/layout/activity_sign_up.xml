@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SignUpActivity">
+    tools:context="br.edu.linuquiz.view.SignUpActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -164,4 +164,12 @@
         app:layout_constraintEnd_toEndOf="@+id/btnOk"
         app:layout_constraintStart_toStartOf="@+id/btnOk"
         app:layout_constraintTop_toBottomOf="@+id/btnOk" />
+
+    <ProgressBar
+        android:id="@+id/butaoasdlkj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

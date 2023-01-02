@@ -1,11 +1,8 @@
-package br.edu.forcagame.view;
+package br.edu.linuquiz.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,17 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
-
-import br.edu.forcagame.R;
-import br.edu.forcagame.controller.UserDAO;
+import br.edu.linuquiz.R;
+import br.edu.linuquiz.controller.services.dao.UserDAO;
 
 public class SignActivity extends AppCompatActivity implements View.OnClickListener{
     TextView txtNoAccount, txtForgotPsw;
@@ -32,10 +22,10 @@ public class SignActivity extends AppCompatActivity implements View.OnClickListe
     ProgressBar progressBar;
     UserDAO userDAO = new UserDAO();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        setTheme(R.style.Theme_ForcaGame);
+        setTheme(R.style.Theme_Linuquiz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
         invalidateOptionsMenu();
@@ -83,4 +73,5 @@ public class SignActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 }
