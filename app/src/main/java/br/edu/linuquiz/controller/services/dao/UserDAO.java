@@ -26,7 +26,7 @@ public class UserDAO{
     }
 
     public void insert(String password, String name, String nickname, String email, String icon, Callbacks.Register c) {
-        User user = new User(password, name, nickname, email, icon);
+        User user = new User(name, nickname, password, email, icon);
 
         try {
             firebaseAuth.createUserWithEmailAndPassword(email, password)

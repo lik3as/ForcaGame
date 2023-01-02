@@ -13,10 +13,10 @@
         android:src="@drawable/icontuxnobg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.054"
+        android:contentDescription="@string/linuxicon" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lytSignUsername"
@@ -104,7 +104,7 @@
         app:boxStrokeWidth="3dp"
         app:counterEnabled="true"
         app:passwordToggleEnabled="true"
-        app:counterMaxLength="8"
+        app:counterMaxLength="16"
         app:passwordToggleDrawable="@drawable/clipeye"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -165,11 +165,4 @@
         app:layout_constraintStart_toStartOf="@+id/btnOk"
         app:layout_constraintTop_toBottomOf="@+id/btnOk" />
 
-    <ProgressBar
-        android:id="@+id/butaoasdlkj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,4 +23,5 @@
     <string name="onOpenNav">Open nav</string>
     <string name="onExitNav">Exit nav</string>
     <string name="nickname">Nickname</string>
+    <string name="linuxicon">LinuxIcon</string>
 </resources>

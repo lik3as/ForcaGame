@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "971455386056",
+    "firebase_url": "https://linquizdb-default-rtdb.firebaseio.com",
     "project_id": "linquizdb",
     "storage_bucket": "linquizdb.appspot.com"
   },
