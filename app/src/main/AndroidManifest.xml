@@ -13,14 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Linuquiz"
         tools:targetApi="31">
+        <activity android:name=".view.MenuActivity"
+            android:exported="false"/>
         <activity
-            android:name="br.edu.linuquiz.view.MenuActivity"
+            android:name=".view.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="br.edu.linuquiz.view.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.edu.linuquiz.view.SignActivity"
+            android:name=".view.SignActivity"
             android:exported="true"
             android:theme="@style/Theme.Splash_Screen">
             <intent-filter>
