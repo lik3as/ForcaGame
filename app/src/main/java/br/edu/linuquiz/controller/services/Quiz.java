@@ -1,61 +1,49 @@
 package br.edu.linuquiz.controller.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import br.edu.linuquiz.R;
-import android.content.res.Resources;
 
-import java.util.Random;
+import android.util.Log;
 
 public class Quiz{
-    Resources r;
-    HashMap<String, HashMap<String, String>> OS = new HashMap<>();
-    HashMap<String, String> arch = new HashMap<>();
-    HashMap<String, String> debian = new HashMap<>();
-    HashMap<String, String> fedora = new HashMap<>();
-    HashMap<String, String> tux = new HashMap<>();
+    HashMap<String, String> q_map = new HashMap<>();
 
-    String[] formats = new String[10];
+    ArrayList<Quest> quests = new ArrayList<>();
 
-    public static Quiz getInstance(String[] OS){
-        return new Quiz(OS);
+    public static Quiz getInstance(OS os){
+        return new Quiz(os);
     }
-    private Quiz(String[] Systems){
-        formats[0] = "Qual é o formato padrão dos pacotes? ";
-        formats[1] = "Qual é o Package Manager? ";
-        formats[9] = "Qual é o bootloader padrão? ";
 
-        arch.put(formats[1], "pacman");
-        arch.put(formats[0], "x86_64");
-        debian.put(formats[1], "dpkg");
-        debian.put(formats[0], ".deb");
-        fedora.put(formats[1], "dnf");
-        fedora.put(formats[0], "rpm");
+    private Quiz(OS os){
+        quests.add(new Quest("Qual é o formato padrão dos pacotes? "));
+        quests.add(new Quest("Qual é o Package Manager? "));
+        quests.add(new Quest("Qual é o bootloader padrão? "));
 
-        tux.put(formats[9], "grub");
+        q_map.put(quests.get(0).quest, os.pkg_extension);
+        q_map.put(quests.get(1).quest, os.pkg_manager);
+        q_map.put(quests.get(2).quest, os.bootloader);
+    }
 
-        for(String name : Systems) {
-            switch(name) {
-                case "Arch":
-                    OS.put(name, arch);
-                    break;
-                case "Debian":
-                    OS.put(name, debian);
-                    break;
-                case "Fedora":
-                    OS.put(name, fedora);
-                    break;
-                default:
-                    OS.put(name, tux);
-                    break;
-            }
+    public String requestQuest(){
+        String quest = null;
+
+        for (int x = 0, i = 0; x < 50 && quest == null; x++, i++){
+            quest = quests.get(i).getRQuestion()
+            Log.d("for: ", String.valueOf(x));
+            if (i == quests.size() - 1) i = 0;
         }
-    }
-    public String requestQuest(String OS_name){
-        int i = new Random().nextInt(2);
-        return formats[i];
+
+        if (quest==null){
+            for (Quest q : quests){
+                q.n_questioned = 0;
+            }
+            return quests.get(2).quest;
+        }
+
+        return quest;
     }
 
-    public String requestAnswer(String OS_name, String question){
-        return OS.get(OS_name).get(question);
+    public String requestAnswer(String question){
+        return q_map.get(question);
     }
 }
