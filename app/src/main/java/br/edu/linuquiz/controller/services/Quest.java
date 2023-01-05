@@ -13,11 +13,20 @@ public class Quest {
     }
 
     Quest(){}
+
+    /*  Returns null or the String quest based on
+     *  how many times it was already questioned
+     *
+     */
     public String getRQuestion(){
         Log.d(this.quest + ": ", String.valueOf(n_questioned));
-        String dft = ((new Random().nextInt(2) - n_questioned) <= 0) ? null : quest;
+
+        final int r_bound = 6; //min -> 3
+        String dft = ((new Random().nextInt(r_bound) - n_questioned) <= 0) ? null : quest;
         if (dft != null) n_questioned++;
-        if (n_questioned == 3) n_questioned -= 2;
+
+        //  Prevents a quest from never appearing again
+        if (n_questioned == r_bound + 1) n_questioned -= 3;
         return dft;
     }
 }

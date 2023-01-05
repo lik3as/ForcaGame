@@ -1,45 +1,61 @@
 package br.edu.linuquiz.view;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.MenuItem;
+
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
 
 import br.edu.linuquiz.R;
-import br.edu.linuquiz.controller.services.OS;
+import br.edu.linuquiz.model.OS;
 import br.edu.linuquiz.controller.services.Quiz;
 
-public class MenuActivity extends AppCompatActivity {
-    EditText answer;
-    TextView question;
-    Button confirm;
+public class MenuActivity extends AppCompatActivity implements OnNavigationItemSelectedListener{
 
-    static Quiz instance;
+    DrawerLayout layout;
+    NavigationView nav_view;
+    Toolbar bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        instance = Quiz.getInstance(new OS("Arch"));
 
-        answer = findViewById(R.id.edtAnswer);
-        question = findViewById(R.id.txtQuest);
-        confirm = findViewById(R.id.btnConfirm);
+        layout = findViewById(R.id.drawerlyt);
+        nav_view = findViewById(R.id.nav_view);
+        bar = findViewById(R.id.toolbar);
 
-        question.setText(instance.requestQuest());
+        //Toolbar cfg
+        setSupportActionBar(bar);
 
-        confirm.setOnClickListener(l -> {
-            if (answer.getText().toString().trim()
-                    .equals(instance.requestAnswer(question.getText().toString()))){
+        //Nav Cfg
+        nav_view.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, layout, bar,
+                R.string.nav_open, R.string.nav_close);
+        layout.addDrawerListener(toggle);
+        toggle.syncState();
 
-                Toast.makeText(getApplicationContext(), "certo", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(getApplicationContext(), "errado", Toast.LENGTH_SHORT).show();
-            }
-            question.setText(instance.requestQuest());
-        });
+        nav_view.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (layout.isDrawerOpen(GravityCompat.START)){
+            layout.closeDrawer(GravityCompat.START);
+        }
+        else
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return true;
     }
 }

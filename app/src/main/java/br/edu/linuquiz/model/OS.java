@@ -1,9 +1,11 @@
-package br.edu.linuquiz.controller.services;
+package br.edu.linuquiz.model;
 
 public class OS {
-    final String pkg_manager;
-    final String pkg_extension;
-    final String bootloader = "grub";
+    public final String pkg_manager;
+    public final String pkg_extension;
+    public final String list = "ls";
+    public final String bootloader = "grub";
+
 
     public OS(String name){
         switch(name){
@@ -21,5 +23,9 @@ public class OS {
                 pkg_extension = ".deb";
                 break;
         }
+    }
+    OS(){
+        pkg_extension = "";
+        pkg_manager = "";
     }
 }
