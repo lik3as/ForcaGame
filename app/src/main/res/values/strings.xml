@@ -24,4 +24,8 @@
     <string name="onExitNav">Exit nav</string>
     <string name="nickname">Nickname</string>
     <string name="linuxicon">LinuxIcon</string>
+    <string name="pts">Pontos: </string>
+    <string name="usr">Usuário: </string>
+    <string name="nav_open">Abir Menu de Navegação</string>
+    <string name="nav_close">Fechar Menu de Navegação</string>
 </resources>

@@ -18,13 +18,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class SignUpActivity extends AppCompatActivity {
-    EditText edtNome, edtNickname, edtPassword, edtEmail;
-    private String name, nickname, password, email, icon;
+    EditText name, nickname, password, email;
     ArrayAdapter<String> adapterProfileIcon;
     AutoCompleteTextView act;
     Button btnOk;
     ImageView imgIcon;
     ProgressBar progressBar;
+    String icon= "";
+
     UserDAO userDAO = new UserDAO();
 
     @Override
@@ -35,11 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         btnOk.setOnClickListener(v -> {
             progressBar.setVisibility(View.VISIBLE);
-            setName(edtNome);
-            setEmail(edtEmail);
-            setNickname(edtNickname);
-            setPassword(edtPassword);
-            userDAO.insert(password, name, nickname, email, icon, l -> {
+            userDAO.insert(format(password), format(name), format(nickname), format(email), icon, l -> {
                 if (l) {
                     Toast.makeText(this, "Usuário cadastrado. ", Toast.LENGTH_SHORT).show();
                 } else {
@@ -86,10 +83,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void initObjects() {
-        edtEmail = findViewById(R.id.edtSignEmail);
-        edtNickname = findViewById(R.id.edtSignUserName);
-        edtNome = findViewById(R.id.edtSignName);
-        edtPassword = findViewById(R.id.edtSignSenha);
+        email = findViewById(R.id.edtSignEmail);
+        nickname = findViewById(R.id.edtSignUserName);
+        name = findViewById(R.id.edtSignName);
+        password = findViewById(R.id.edtSignSenha);
         act = findViewById(R.id.atcSign);
         imgIcon = findViewById(R.id.imageView);
         btnOk = findViewById(R.id.btnOk);
@@ -97,19 +94,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-    public void setName(EditText name) {
-        this.name = name.getText().toString().trim();
-    }
-
-    public void setNickname(EditText nickname) {
-        this.nickname = nickname.getText().toString().trim();
-    }
-
-    public void setPassword(EditText password) {
-        this.password = password.getText().toString();
-    }
-
-    public void setEmail(EditText email) {
-        this.email = email.getText().toString().trim();
+    String format(EditText edt){
+        return edt.getText().toString().trim();
     }
 }

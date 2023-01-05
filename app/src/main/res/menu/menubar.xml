@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_user"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/usr"/>
+
+    <item
+        android:id="@+id/menu_pts"
+        android:icon="@drawable/ic_baseline_local_play_24"
+        android:title="@string/pts"/>
+
+    <item android:title="Apps">
+        <menu>
+            <item
+                android:id="@+id/menu_sound"
+                android:icon="@drawable/ic_baseline_speaker_24"
+                android:title="app_sound"/>
+
+            <item
+                android:id="@+id/menu_net"
+                android:icon="@drawable/ic_baseline_network_check_24"
+                android:title="app_net"/>/
+        </menu>
+    </item>
+
+
+</menu>
