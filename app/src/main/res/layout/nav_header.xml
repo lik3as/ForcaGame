@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="28dp"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/menu_icon"
         android:layout_width="match_parent"
         android:layout_height="162dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="28dp"
         android:background="@color/amber0"
         android:src="@drawable/iconarchlinux" />
 </LinearLayout>

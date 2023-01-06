@@ -50,12 +50,14 @@ public class MenuActivity extends AppCompatActivity implements OnNavigationItemS
         if (layout.isDrawerOpen(GravityCompat.START)){
             layout.closeDrawer(GravityCompat.START);
         }
-        else
-        super.onBackPressed();
+        else {
+            super.onBackPressed();
+        }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
         return true;
     }
 }
