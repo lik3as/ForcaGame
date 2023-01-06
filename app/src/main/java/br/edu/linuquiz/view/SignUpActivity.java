@@ -15,6 +15,7 @@ import br.edu.linuquiz.controller.services.dao.UserDAO;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -56,28 +57,28 @@ public class SignUpActivity extends AppCompatActivity {
             act.setBackgroundColor(40);
             switch (adapterView.getItemAtPosition(pos).toString()) {
                 case ("Arch"):
-                    imgIcon.setImageResource(R.drawable.iconarchlinux);
-                    icon = adapterView.getItemAtPosition(pos).toString();
+                    imgIcon.setImageResource(R.drawable.arch);
+                    icon = adapterView.getItemAtPosition(pos).toString().toLowerCase();
                     break;
                 case ("Gentoo"):
-                    imgIcon.setImageResource(R.drawable.icongentoo);
-                    icon = adapterView.getItemAtPosition(pos).toString();
+                    imgIcon.setImageResource(R.drawable.gentoo);
+                    icon = adapterView.getItemAtPosition(pos).toString().toLowerCase();
                     break;
                 case ("Debian"):
-                    imgIcon.setImageResource(R.drawable.icondebian);
-                    icon = adapterView.getItemAtPosition(pos).toString();
+                    imgIcon.setImageResource(R.drawable.debian);
+                    icon = adapterView.getItemAtPosition(pos).toString().toLowerCase();
                     break;
                 case ("Fedora"):
-                    imgIcon.setImageResource(R.drawable.iconfedora);
-                    icon = adapterView.getItemAtPosition(pos).toString();
+                    imgIcon.setImageResource(R.drawable.fedora);
+                    icon = adapterView.getItemAtPosition(pos).toString().toLowerCase();
                     break;
                 case ("Ubuntu"):
                     imgIcon.setImageResource(R.drawable.iconubuntu);
-                    icon = adapterView.getItemAtPosition(pos).toString();
+                    icon = adapterView.getItemAtPosition(pos).toString().toLowerCase();
                     break;
                 case ("Tux"):
                     imgIcon.setImageResource(R.drawable.icontuxnobg);
-                    icon = adapterView.getItemAtPosition(pos).toString();
+                    icon = adapterView.getItemAtPosition(pos).toString().toLowerCase();
             }
         });
     }

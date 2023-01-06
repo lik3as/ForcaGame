@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_user"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="@string/usr"/>
+        android:title="@string/usr"
+        app:actionViewClass="android.widget.SearchView"/>
 
     <item
         android:id="@+id/menu_pts"
         android:icon="@drawable/ic_baseline_local_play_24"
-        android:title="@string/pts"/>
+        android:title="@string/pts"
+        app:actionViewClass="android.widget.SearchView"/>
 
     <item android:title="Apps">
         <menu>
             <item
                 android:id="@+id/menu_sound"
                 android:icon="@drawable/ic_baseline_speaker_24"
-                android:title="app_sound"/>
+                android:title="app_sound"
+                app:actionViewClass="android.widget.SearchView"/>
 
             <item
                 android:id="@+id/menu_net"
                 android:icon="@drawable/ic_baseline_network_check_24"
-                android:title="app_net"/>/
+                android:title="app_net"
+                app:actionViewClass="android.widget.SearchView"/>
+
+            <item
+                android:id="@+id/menu_bootloader"
+                android:icon="@drawable/ic_baseline_power_settings_new_24"
+                android:title="Bootloader: grub"
+                app:actionViewClass="android.widget.SearchView"/>
         </menu>
     </item>
 
