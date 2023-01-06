@@ -73,7 +73,7 @@
         android:hint="@string/password"
         app:boxStrokeWidth="3dp"
         app:counterEnabled="true"
-        app:counterMaxLength="8"
+        app:counterMaxLength="16"
         app:layout_constraintTop_toBottomOf="@+id/lytEmail"
         app:passwordToggleDrawable="@drawable/clipeye"
         app:passwordToggleEnabled="true"
