@@ -10,6 +10,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import br.edu.linuquiz.controller.services.Callbacks;
@@ -28,7 +29,7 @@ public class UserDAO{
 
     public void insert(String password, String name, String nickname, String email, String icon, Callbacks.SignUser c) {
         User user = new User(name, nickname, password, email, icon);
-        OS os = new OS(icon);
+        OS os = new OS(icon.toLowerCase());
 
         try {
             firebaseAuth.createUserWithEmailAndPassword(email, password)

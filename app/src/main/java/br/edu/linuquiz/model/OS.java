@@ -11,7 +11,7 @@ public class OS {
     public String getApp_sound() {
         return app_sound;
     }
-    
+
     public String getApp_net() {
         return app_net;
     }
